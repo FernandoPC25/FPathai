@@ -1,95 +1,91 @@
 import os
 import csv
+import streamlit as st
+import pandas as pd
 
-def generate_csv_from_h5_files(folder_path, output_csv_path, label):
-    with open(output_csv_path, mode='w', newline='') as csv_file:
-        fieldnames = ['Path', 'WSI_name', 'Patient_ID', 'Label']
-        writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
-        writer.writeheader()
+def generate_csv_with_h5_images():
+    """
+    Generate the csv
+    """
+    directory_control = st.text_input("Path to the control folder:")
+    if not directory_control:
+        st.info("Introduce the path of the control subjects.")
+        return
+    if not os.path.isdir(directory_control):
+        st.error("Invalid directory path.")
+        return
 
-        for filename in os.listdir(folder_path):
-            if filename.endswith('.svs'):
-                full_path = os.path.join(folder_path, filename)
-                patient_id = full_path.split('/')[-1].split('-')[:3]
-                patient_id = '-'.join(patient_id)
-                file_name = os.path.splitext(filename)[0]
-                file_name = file_name + '.h5'
+    h5_images_control = [filename for filename in os.listdir(directory_control) if filename.lower().endswith(".h5")]
 
-                writer.writerow({'Path': full_path, 'WSI_name': file_name, 'Patient_ID': patient_id, 'Label': label})
-                
-# Usage of the function
-folder_path = '/home/fernandopc/Documentos/prueba10/control'
-output_csv_path2 = '/home/fernandopc/Documentos/prueba10/control/control.csv' 
+    if not h5_images_control:
+        st.info("No H5 images found in the directory.")
+        return
+    st.success(f"Found {len(h5_images_control)} H5 image(s) in the directory.")
 
-generate_csv_from_h5_files(folder_path, output_csv_path2, label="Control")
+    ########
 
-# Usage of the function
-folder_path = '/home/fernandopc/Documentos/prueba10/tumor/'
-output_csv_path2 = '/home/fernandopc/Documentos/prueba10/control/tumor.csv' 
+    directory_tumor = st.text_input("Path to the tumor folder:")
+    if not directory_tumor:
+        st.info("Introduce the path of the tumor subjects.")
+        return
+    if not os.path.isdir(directory_tumor):
+        st.error("Invalid directory path.")
+        return
 
-generate_csv_from_h5_files(folder_path, output_csv_path2, label="Tumor")
+    if directory_tumor == directory_control:
+        st.error("The paths are the same! Please change the directory.")
+        return
+
+    h5_images_tumor = [filename for filename in os.listdir(directory_tumor) if filename.lower().endswith(".h5")]
+
+    if not h5_images_tumor:
+        st.info("No H5 images found in the directory.")
+        return
+
+    st.success(f"Found {len(h5_images_tumor)} H5 image(s) in the directory.")
+
+    csv_filename = st.text_input("Enter the CSV filename (without extension):")
+
+    if not csv_filename:
+        st.info("Enter a CSV filename.")
+        return
+
+    csv_filename = csv_filename + ".csv"
+
+    csv_file = generate_csv_from_h5_files(directory_control, directory_tumor, csv_filename)
+
+    st.success(f"CSV file '{csv_filename}' with **{len(h5_images_control)} control image(s)** and "
+               f"**{len(h5_images_tumor)} tumor image(s)** created successfully."
+               f"\n\n Now you can download it.")
+
+    st.download_button(label="Download CSV", data=open(csv_file, 'rb').read(), file_name=csv_filename,
+                       mime='text/csv')
 
 
+def generate_csv_from_h5_files(folder_path_control, folder_path_tumor, csv_filename):
+    csv_data = []
+    for filename in os.listdir(folder_path_control):
+        if filename.endswith('.h5'):
+            full_path = os.path.join(folder_path_control, filename)
+            patient_id = filename.split('/')[-1].split('-')[:3]
+            patient_id = '-'.join(patient_id)
+            file_name = os.path.splitext(filename)[0]
+            file_name = file_name + '.h5'
+            csv_data.append({'Path': full_path, 'WSI_name': file_name, 'Patient_ID': patient_id, 'Label': "Control"})
 
-import os
-import shutil
+    for filename in os.listdir(folder_path_tumor):
+        if filename.endswith('.h5'):
+            full_path = os.path.join(folder_path_tumor, filename)
+            patient_id = filename.split('/')[-1].split('-')[:3]
+            patient_id = '-'.join(patient_id)
+            file_name = os.path.splitext(filename)[0]
+            file_name = file_name + '.h5'
+            csv_data.append({'Path': full_path, 'WSI_name': file_name, 'Patient_ID': patient_id, 'Label': "Tumor"})
 
-# para mover todas las imagenes svs a un mismo sitio (que no estén cada una en una carpeta)
-#carpeta_principal = '/home/fernandopc/Documentos/prueba1'
-carpeta_principal = '/home/fernandopc/Escritorio/WSI-Pancreas-Classification/imagen/imagenessvs2/carpeta_patches_control'
+    df = pd.DataFrame(csv_data)
+    st.write("Check the CSV that you are about to download:")
+    st.dataframe(df, use_container_width=True)
+    csv_filename = csv_filename
+    df.to_csv(csv_filename, index=False)
 
-# Ruta de la carpeta donde se guardarán las imágenes .svs
-carpeta_destino = '/home/fernandopc/Escritorio/WSI-Pancreas-Classification/imagen/imagenessvs2/carpeta_patches_control'
-
-# Crear la carpeta de destino si no existe
-if not os.path.exists(carpeta_destino):
-    os.makedirs(carpeta_destino)
-
-# Recorrer las carpetas
-for carpeta in os.listdir(carpeta_principal):
-    ruta_carpeta = os.path.join(carpeta_principal, carpeta)
-
-    # Comprobar si es una carpeta
-    if os.path.isdir(ruta_carpeta):
-        # Recorrer los archivos de la carpeta
-        for archivo in os.listdir(ruta_carpeta):
-            ruta_archivo = os.path.join(ruta_carpeta, archivo)
-
-            # Comprobar si es un archivo .svs
-            if os.path.isfile(ruta_archivo) and archivo.endswith('.h5'):
-                # Copiar el archivo a la carpeta de destino
-                shutil.copy2(ruta_archivo, carpeta_destino)
-                
-                
-                
-                
-                
-                
-                
-# pasar de carpetas a una simple carpeta                
-import os
-import shutil
-
-# Path to folder of patches
-patch_path = '/home/fernandopc/Documentos/prueba4/pruebasa'
-
-# Move images to folder "A" and delete empty folders
-for folder in os.listdir(patch_path):
-    folder_path = os.path.join(patch_path, folder)
-    h5_files = [file for file in os.listdir(folder_path) if file.endswith(".h5")]
-    
-    for h5_file in h5_files:
-        source_path = os.path.join(folder_path, h5_file)
-        destination_path = os.path.join(patch_path, h5_file)
-        shutil.move(source_path, destination_path)
-    
-    os.rmdir(folder_path)
-
-print("Process completed.")               
-                
-                
-                
-                
-                
-                
-                
+    return csv_filename
