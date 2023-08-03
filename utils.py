@@ -59,3 +59,37 @@ for carpeta in os.listdir(carpeta_principal):
             if os.path.isfile(ruta_archivo) and archivo.endswith('.h5'):
                 # Copiar el archivo a la carpeta de destino
                 shutil.copy2(ruta_archivo, carpeta_destino)
+                
+                
+                
+                
+                
+                
+                
+# pasar de carpetas a una simple carpeta                
+import os
+import shutil
+
+# Path to folder of patches
+patch_path = '/home/fernandopc/Documentos/prueba4/pruebasa'
+
+# Move images to folder "A" and delete empty folders
+for folder in os.listdir(patch_path):
+    folder_path = os.path.join(patch_path, folder)
+    h5_files = [file for file in os.listdir(folder_path) if file.endswith(".h5")]
+    
+    for h5_file in h5_files:
+        source_path = os.path.join(folder_path, h5_file)
+        destination_path = os.path.join(patch_path, h5_file)
+        shutil.move(source_path, destination_path)
+    
+    os.rmdir(folder_path)
+
+print("Process completed.")               
+                
+                
+                
+                
+                
+                
+                
