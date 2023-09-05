@@ -1,19 +1,34 @@
 import streamlit as st
+from PIL import Image
 st.set_page_config(
-    page_title="Histopathology App",
-    layout="wide",  #'wide' o 'centered'
+    page_title="Histopathological prediction",
+    page_icon="favicon.png",
+    layout="centered",  #'wide' o 'centered'
     initial_sidebar_state="expanded"  # collapsed' o 'expanded'
 )
 
+# st.sidebar.image("favicon.png", width= 50)
+
+image = Image.open('logo.png')
+
+st.image(image, width=300, use_column_width="always")
 
 
 st.write("""
 # Histopathological prediction
 
-*Brief Description*
+This application enables users to perform comprehensive image analysis on WSI, specifically, svs. 
+It offers the capability to segment large WSI images into smaller patches for enhanced processing efficiency. 
+Users can then harness these patches to train machine learning models, 
+enabling advanced analysis and pattern recognition. 
+Furthermore, the application provides a user-friendly interface for visualizing the model's predictions 
+on these patches.
 
-Images obtained from [NIH Cancer Datasets](https://portal.gdc.cancer.gov/)
+SVS images can be obtained from [NIH Cancer Datasets](https://portal.gdc.cancer.gov/)
 """)
+
+st.write("When images in the SVS format are available on the user's device, "
+         "they must be reorganized as follows to ensure compatibility with the application:")
 
 st.write(
     "**Step 1: Create a Main Folder**"
@@ -31,32 +46,16 @@ st.write(
     "respective classes. This structured organization ensures that your data remains clear and accessible for analysis."
 )
 
-import streamlit as st
-import graphviz
+st.write("\n\n\n")
 
-# Create a graphlib graph object
-#
-#
-# st.graphviz_chart('''
-#     digraph {
-#         "Create Patches" -> "Create CSV"
-#         "Otra cosa" -> "Train Model"
-#         "Create CSV" -> "Train Model"
-#
-#     }
-# ''')
-#
-# st.graphviz_chart('''
-#     digraph {
-#         "A" -> "B"
-#         "A" -> "D"
-#         "A" -> "E"
-#         "B" -> "H"
-#         "B" -> "C"
-#         "C" -> "F"
-#         "D" -> "G"
-#         "E" -> "G"
-#         "E" -> "H"
-#
-#     }
-# ''')
+image1 = Image.open('methodology.png')
+
+st.image(image1, caption='Prepare the data for the application', clamp=True)
+
+st.write("Once the images have been organized in this manner, the application can be utilized seamlessly,"
+         " **eliminating the necessity for any coding involvement!**")
+
+image2 = Image.open('diagramafinal.png')
+
+st.image(image2, caption='Workflow of the application', clamp=True)
+
