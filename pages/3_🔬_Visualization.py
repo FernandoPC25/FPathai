@@ -3,8 +3,8 @@ import random
 import cv2
 import h5py
 import keras
-import matplotlib.cm as cm
-import numpy as np 
+import matplotlib as mpl
+import numpy as np
 import pandas as pd
 import streamlit as st
 import tensorflow as tf
@@ -42,7 +42,7 @@ def make_gradcam_heatmap(img, model, last_conv_layer_name, pred_index=None):
 def save_and_display_gradcam(img, heatmap, alpha=0.5):
     shape=(img.shape[0],img.shape[0])
     heatmap = np.uint8(255 * heatmap)
-    jet = cm.get_cmap("jet")
+    jet = mpl.colormaps["jet"]
     jet_colors = jet(np.arange(256))[:, :3]
     jet_heatmap = jet_colors[heatmap]
     jet_heatmap = keras.utils.array_to_img(jet_heatmap)

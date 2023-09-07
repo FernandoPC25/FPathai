@@ -1,21 +1,20 @@
 import os
+import random
+import uuid
+
 import h5py
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+import seaborn as sns
 import streamlit as st
 import tensorflow as tf
-from sklearn.model_selection import train_test_split
-from tensorflow import keras
-import seaborn as sns
-from tensorflow.keras import layers
-from sklearn.metrics import roc_curve, auc
-import time
-import random
-from sklearn.metrics import roc_auc_score
-import uuid
 from sklearn.metrics import confusion_matrix
 from sklearn.metrics import precision_score, recall_score, f1_score
+from sklearn.metrics import roc_auc_score
+from sklearn.metrics import roc_curve, auc
+from sklearn.model_selection import train_test_split
+from tensorflow import keras
 
 
 def compute_metrics(predicted_labels, true_labels):
