@@ -2,14 +2,14 @@ import streamlit as st
 from PIL import Image
 st.set_page_config(
     page_title="Histopathological prediction",
-    page_icon="favicon.png",
+    page_icon="images/favicon.png",
     layout="centered",  #'wide' o 'centered'
     initial_sidebar_state="expanded"  # collapsed' o 'expanded'
 )
 
 # st.sidebar.image("favicon.png", width= 50)
 
-image = Image.open('logo.png')
+image = Image.open('images/logo.png')
 
 st.image(image, width=300, use_column_width="always")
 
@@ -48,14 +48,14 @@ st.write(
 
 st.write("\n\n\n")
 
-image1 = Image.open('methodology.png')
+image1 = Image.open('images/methodology.png')
 
 st.image(image1, caption='Prepare the data for the application', clamp=True)
 
 st.write("Once the images have been organized in this manner, the application can be utilized seamlessly,"
          " **eliminating the necessity for any coding involvement!**")
 
-image2 = Image.open('diagramafinal.png')
+image2 = Image.open('images/FPathai-diagram.png')
 
 st.image(image2, caption='Workflow of the application', clamp=True)
 
