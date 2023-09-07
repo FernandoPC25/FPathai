@@ -31,4 +31,4 @@ The subfolders will hold the SVS images that correspond to their respective clas
 
 Once the images have been organized in this manner, the application can be utilized seamlessly, **eliminating the necessity for any coding involvement!**
 
-![Diagram](images/diagramafinal.png)
+![Diagram](images/FPathai-diagram.png)
