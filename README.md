@@ -23,7 +23,7 @@ Begin by creating a main folder on your local machine or storage device. This ma
 Within the main folder, create subfolders to represent each distinct class or category of your experiment. For example, your classes might be 'Control', 'Tumor', and 'Metastasis'.
 
 ## Step 3: Organize with Subfolders
-The subfolders will hold the SVS images that correspond to their respective classes. For doing so, simply place the ***.svs***  into the appropriate sub-subfolders according to their respective classes. This structured organization ensures that your data remains clear and accessible for analysis.
+The subfolders will hold the ***.svs***  images that correspond to their respective classes. For doing so, simply place the ***.svs***  into the appropriate sub-subfolders according to their respective classes. This structured organization ensures that your data remains clear and accessible for analysis.
 
 
 ![Methodology](images/methodology.png)
