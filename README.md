@@ -12,8 +12,7 @@ Get ready to explore the future of accessible, code-free machine learning in his
 The WSI images should be
 in *.svs* format and can be obtained from [NIH Cancer Datasets](https://portal.gdc.cancer.gov/).
 
-When images in the SVS format are available on the user's device, "
-         "they must be reorganized as follows to ensure compatibility with the application:
+When images in the SVS format are available on the user's device, they must be reorganized as follows to ensure compatibility with the application:
 
 ## Step 1: Create a Main Folder
 
