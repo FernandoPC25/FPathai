@@ -228,8 +228,9 @@ def create_patches_and_csv(root_folder, patch, total_svs_count, max_patches):
     df = pd.DataFrame(csv_data, columns=["Path", "Patient_ID", "Label", "num_patches"])
 
     # Create CSV in the root folder
-    csv_file_path = os.path.join(root_folder, f"h5_data_{patch}x{patch}-"
-                                              f"{os.path.basename(os.path.dirname(root_folder))}.csv")
+    csv_file_path = os.path.join(root_folder, f"h5_data_{patch}x{patch}"
+                                              #f"-{os.path.basename(os.path.dirname(root_folder))}"
+                                              f".csv")
     df.to_csv(csv_file_path, index=False)
     st.info(f"CSV prepared and created in {csv_file_path}:", icon="ℹ️")
     return df

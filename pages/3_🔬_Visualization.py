@@ -41,15 +41,15 @@ def make_gradcam_heatmap(img, model, last_conv_layer_name, pred_index=None):
 
 def save_and_display_gradcam(img, heatmap, alpha=0.5):
     shape=(img.shape[0],img.shape[0])
-    heatmap = np.uint8(255 * heatmap)
+    heatmap = np.uint32(255 * heatmap)
     jet = mpl.colormaps["jet"]
     jet_colors = jet(np.arange(256))[:, :3]
     jet_heatmap = jet_colors[heatmap]
     jet_heatmap = keras.utils.array_to_img(jet_heatmap)
     jet_heatmap = jet_heatmap.resize(shape)
     jet_heatmap = keras.utils.img_to_array(jet_heatmap)
-    img = np.asarray(img, np.int)
-    jet_heatmap = np.asarray(jet_heatmap, np.int)
+    img = np.asarray(img, np.int32)
+    jet_heatmap = np.asarray(jet_heatmap, np.int32)
     blended_image = cv2.addWeighted(img, alpha, jet_heatmap, 1 - alpha, 0)
     return blended_image
 
