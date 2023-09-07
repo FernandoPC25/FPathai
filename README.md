@@ -1,4 +1,4 @@
-![Logo](logo.png)
+![Logo](images/logo.png)
 # Application for histopathological image analysis
 
 **Welcome to FPathai**, an innovative application tailored for the world of histopathological image analysis 
@@ -27,8 +27,8 @@ Within the main folder, create subfolders to represent each distinct class or ca
 The subfolders will hold the SVS images that correspond to their respective classes. For doing so, simply place the SVS (Whole Slide Images) into the appropriate sub-subfolders according to their respective classes. This structured organization ensures that your data remains clear and accessible for analysis.
 
 
-![Methodology](methodology.png)
+![Methodology](images/methodology.png)
 
 Once the images have been organized in this manner, the application can be utilized seamlessly, **eliminating the necessity for any coding involvement!**
 
-![Diagram](diagramafinal.png)
+![Diagram](images/diagramafinal.png)
