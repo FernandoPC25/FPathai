@@ -216,7 +216,7 @@ def train_csv_with_keys(csv_with_keys, batch_size, epochs):
                     df_batch = train_csv.iloc[batch:batch + batch_size]
                     patches, labels = read_patches(df_batch)
                     history = model.fit(patches, labels, verbose=0)
-                    print(f"{batch}: {history.history}")
+                    # print(f"{batch}: {history.history}")
                     counter+=1
                     acc_loss += history.history["loss"][0]
                     acc_accuracy += history.history["categorical_accuracy"][0]
@@ -224,7 +224,7 @@ def train_csv_with_keys(csv_with_keys, batch_size, epochs):
 
                 loss = acc_loss/counter
                 accuracy = acc_accuracy/counter
-                print(f"\n FINAL DE EPOCA: LOSS: {loss} - ACCURACY:{accuracy}")
+                # print(f"\n END OF EPOCH: LOSS: {loss} - ACCURACY:{accuracy}")
                 val_loss, val_accuracy = model.evaluate(val_data, val_labels)
 
                 results['loss'].append(loss)
@@ -248,7 +248,7 @@ def train_csv_with_keys(csv_with_keys, batch_size, epochs):
                     # print(df_batch)
                     patches, labels = read_patches(df_batch)
                     history = model.fit(patches, labels, verbose=0)
-                    print(f"{batch}: {history.history}")
+                    # print(f"{batch}: {history.history}")
                     counter += 1
                     acc_loss += history.history["loss"][0]
                     acc_accuracy += history.history["categorical_accuracy"][0]
@@ -256,7 +256,7 @@ def train_csv_with_keys(csv_with_keys, batch_size, epochs):
                 accuracy = history.history['categorical_accuracy'][0]
                 results['loss'].append(loss)
                 results['categorical_accuracy'].append(accuracy)
-                print(f"Metrics in the epoch {epoch}: {history.history}")
+                # print(f"Metrics in the epoch {epoch}: {history.history}")
                 st.write(f'Epoch {epoch + 1}/{epochs} - Loss: {loss:.4f} - Accuracy: {accuracy:.4f}')
             show_training_metrics(results, test_csv)
         time = time.time() - start_time
