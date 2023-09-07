@@ -29,7 +29,6 @@ The subfolders will hold the SVS images that correspond to their respective clas
 
 ![Methodology](methodology.png)
 
-Once the images have been organized in this manner, the application can be utilized seamlessly,"
-         " **eliminating the necessity for any coding involvement!**
+Once the images have been organized in this manner, the application can be utilized seamlessly, **eliminating the necessity for any coding involvement!**
 
 ![Diagram](diagramafinal.png)
