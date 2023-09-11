@@ -152,7 +152,7 @@ if csv_file is not None:
                         patches = []
                         with h5py.File(patch_path, 'r') as data:
                             number_keys = list(data.keys())
-                            random_patches = random.sample(number_keys, 25)
+                            random_patches = random.sample(number_keys, min(len(number_keys), 5))
                             for key in random_patches:
                                 patch = data[key][:]
                                 patches.append(patch)
