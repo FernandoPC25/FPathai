@@ -14,7 +14,7 @@ Get ready to explore the future of accessible, code-free machine learning in his
 To clone this repository to your local machine, run the following command in your terminal:
 
 ```bash
-git clone [https://github.com/FernandoPC25/FPathai​](https://github.com/FernandoPC25/FPathai.git)
+git clone https://github.com/FernandoPC25/FPathai.git
 ```
 After cloning the repository, navigate to its directory:
 
