@@ -38,15 +38,15 @@ in ***.svs*** format and can be obtained from [NIH Cancer Datasets](https://port
 
 When images in the ***.svs***. format are available on the user's device, they must be reorganized as follows to ensure compatibility with the application:
 
-## Step 1: Create a Main Folder
+### Step 1: Create a Main Folder
 
 Begin by creating a main folder on your local machine or storage device. This main folder will serve as the central hub for all your experiment data. Give it a descriptive name that relates to your project.
 
-## Step 2: Class Subfolders
+### Step 2: Class Subfolders
 
 Within the main folder, create subfolders to represent each distinct class or category of your experiment. For example, your classes might be 'Control', 'Tumor', and 'Metastasis'.
 
-## Step 3: Organize with Subfolders
+### Step 3: Organize with Subfolders
 The subfolders will hold the ***.svs***  images that correspond to their respective classes. For doing so, simply place the ***.svs***  into the appropriate sub-subfolders according to their respective classes. This structured organization ensures that your data remains clear and accessible for analysis.
 
 
