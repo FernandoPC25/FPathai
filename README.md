@@ -19,6 +19,8 @@ git clone [https://github.com/FernandoPC25/FPathai​](https://github.com/Fernan
 After cloning the repository, navigate to its directory:
 
 ## Install dependencies
+After cloning the repository, navigate to its directory:
+
 ```bash
 cd FPathai
 ```
@@ -27,6 +29,7 @@ Next, install the required Python dependencies using pip. You can do this by run
 ```bash
 pip install -r requirements.txt
 ```
+This will install all the necessary packages listed in the requirements.txt file.
 
 ## Usage
 
