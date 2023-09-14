@@ -9,6 +9,27 @@ including researchers, medical professionals, and enthusiasts, to effortlessly c
 and train machine learning models using Whole Slide Image (WSI) data. 
 Get ready to explore the future of accessible, code-free machine learning in histopathological image analysis.
 
+## Clone the Repository
+
+To clone this repository to your local machine, run the following command in your terminal:
+
+```bash
+git clone [https://github.com/FernandoPC25/FPathai​](https://github.com/FernandoPC25/FPathai.git)
+```
+After cloning the repository, navigate to its directory:
+
+## Install dependencies
+```bash
+cd FPathai
+```
+
+Next, install the required Python dependencies using pip. You can do this by running:
+```bash
+pip install -r requirements.txt
+```
+
+## Usage
+
 The WSI images should be
 in ***.svs*** format and can be obtained from [NIH Cancer Datasets](https://portal.gdc.cancer.gov/).
 
@@ -31,3 +52,10 @@ The subfolders will hold the ***.svs***  images that correspond to their respect
 Once the images have been organized in this manner, the application can be utilized seamlessly, **eliminating the necessity for any coding involvement!**
 
 ![Diagram](images/FPathai-diagram.png)
+
+
+## Contributing
+If you'd like to contribute to this project, please follow the Contributing Guidelines.
+
+## License
+This project is licensed under the GPL-3.0 license
