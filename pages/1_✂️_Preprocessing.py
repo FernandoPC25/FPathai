@@ -1,6 +1,6 @@
 # For Windows Users, the directory where OpenSlide is downloaded should be added.
 # Check: https://openslide.org/api/python/#installing
-OPENSLIDE_PATH = r'c:\Users\Fernando\Desktop\MASTER UGR\4-TFM\openslide-win64\bin'
+# OPENSLIDE_PATH = r'absolute\path\to\your\openslide-win64\bin'
 import os
 if hasattr(os, 'add_dll_directory'):
     # Python >= 3.8 on Windows
