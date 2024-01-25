@@ -1,4 +1,4 @@
-OPENSLIDE_PATH = r'c:\Users\Fernando\Desktop\FPC\MASTER UGR\4-TFM\openslide-win64\bin'
+#OPENSLIDE_PATH = r'\path\to\your\openslide-win64\bin'
 import os
 
 if hasattr(os, 'add_dll_directory'):
@@ -259,70 +259,3 @@ if csv_file is not None:
         st.info("Please specify the directory containing the .h5 model", icon="ℹ")
     else:
         st.error("Introduce a correct format for the model", icon="🚨")
-
-
-# if csv_file is not None:
-#     csv = load_csv(csv_file)
-#     st.write("Your CSV file:")
-#     st.dataframe(csv)
-#     h5_labels = np.array(csv["Label"].values)
-#     st.write(f"Your dataset has {len(np.unique(h5_labels))} labels: {np.unique(h5_labels)}")
-#     label_mapping = {label: idx for idx, label in enumerate(set(h5_labels))}
-#     print(label_mapping)
-#     labels=list(label_mapping)
-#
-#     svs_image_path = st.text_input("Enter the path to the svs image:",
-#                                    help="blalbal")
-#
-#     if os.path.exists(svs_image_path):
-#         if svs_image_path.endswith(".svs"):
-#             slide = OpenSlide(svs_image_path)
-#             thumbnail = slide.get_thumbnail((1024, 1024))
-#             st.image(thumbnail, caption="Image to diagnose", use_column_width=True)
-#
-#             h5_model = st.text_input("Enter the path of the model.h5 trained with this dataset.",
-#                                      help="This field should be something like: "
-#                                           "/path/to/directory/256-model-xx00xx00-xx00-0000-0xxx-xxxx0000xxxx000.h5")
-#             if h5_model.endswith(".h5"):
-#                 try:
-#                     loaded_model = tf.keras.models.load_model(h5_model)
-#                     if isinstance(loaded_model, tf.keras.models.Model):
-#                         patch_size = loaded_model.layers[0].input_shape[0][1:3]
-#                         with st.spinner(f"Generating and evaluating patches of {patch_size}..."):
-#                             coords, patches = get_patches_and_coordinates(svs_image_path, patch_size)
-#
-#                             predictions = loaded_model.predict(patches)
-#
-#                             predicted_class = predict_majority_class(predictions)
-#
-#                             plot_figure_and_patches(svs_image_path, label_mapping, predicted_class, patch_size, coords)
-#
-#                         st.success("Done!")
-#
-#
-#
-#                     else:
-#                         st.error("Introduce a correct format for the model", icon="🚨")
-#                 except:
-#                     st.warning("Introduce a valid model created within the application", icon="⚠️")
-#
-#
-#             elif not h5_model:
-#                 st.info("Please specify the directory containing the .h5 model", icon="ℹ")
-#             else:
-#                 st.warning("Introduce a model in .h5 format", icon="⚠️")
-#
-#
-#         else:
-#             st.warning("Please introduce an image in .svs format", icon= "⚠️")
-#
-#     elif not svs_image_path:
-#         st.info("Please specify the directory containing the .svs format images for which you wish to generate "
-#                 "patches.", icon="ℹ")
-#     else:
-#         st.error("Invalid directory path.", icon="🚨")
-
-
-    #C:/Users/Fernando/Desktop/MASTER UGR/4-TFM/TFM-streamlit/DIAGNOSE/TCGA-22-4595-11A-01-BS1.460293a1-334c-4a57-999d-a9ba82fb289b.svs
-
-    # C:/Users/Fernando/Desktop/MASTER UGR/4-TFM/TFM-streamlit/project/VGG16_b8820d06-c221-4848-96c1-059e4c1f59b5-patch_size_256-max_patch_num_50-batch_size_32-epoch_3-optimizer_Adam.h5
