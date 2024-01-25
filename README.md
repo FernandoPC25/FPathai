@@ -9,8 +9,6 @@ including researchers, medical professionals, and enthusiasts, to effortlessly c
 and train machine learning models using Whole Slide Image (WSI) data. 
 Get ready to explore the future of accessible, code-free machine learning in histopathological image analysis.
 
-![GIF](https://github.com/FernandoPC25/FPathai/blob/main/prueba1.gif)
-
 
 ## Clone the Repository
 
