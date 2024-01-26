@@ -20,7 +20,7 @@ This library comprises five distinct pages, each serving a specific purpose:
 <br>
 
 **Training Model**: A page designed for configuring and training a model using the generated patches.
-<img src="https://github.com/FernandoPC25/FPathai/blob/main/gifs/training.gif" width="500px">
+<img src="https://github.com/FernandoPC25/FPathai/blob/main/gifs/trainingmodel.gif" width="500px">
 <br>
 
 **Visualization**: A page dedicated to enhancing the interpretability of patch classification results.
