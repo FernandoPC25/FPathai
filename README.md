@@ -12,7 +12,7 @@ Get ready to explore the future of accessible, code-free machine learning in his
 This library comprises five distinct pages, each serving a specific purpose:
 
 **Homepage**: An introductory page providing an overview of FPathai.
-<img src="https://github.com/FernandoPC25/FPathai/blob/main/gifs/homepage.gif" width="20px">
+<img src="https://github.com/FernandoPC25/FPathai/blob/main/gifs/homepage.gif" width="200px">
 
 **Preprocessing**: A page dedicated to generating patches for Whole Slide Images (WSI).
 ![Preprocessing](https://github.com/FernandoPC25/FPathai/blob/main/gifs/preprocessing.gif)
