@@ -16,19 +16,19 @@ This library comprises five distinct pages, each serving a specific purpose:
 <br>
 
 **Preprocessing**: A page dedicated to generating patches for Whole Slide Images (WSI).
-<img src="https://github.com/FernandoPC25/FPathai/blob/main/gifs/preprocessing" width="500px">
+<img src="https://github.com/FernandoPC25/FPathai/blob/main/gifs/preprocessing.gif" width="500px">
 <br>
 
 **Training Model**: A page designed for configuring and training a model using the generated patches.
-<img src="https://github.com/FernandoPC25/FPathai/blob/main/gifs/training" width="500px">
+<img src="https://github.com/FernandoPC25/FPathai/blob/main/gifs/training.gif" width="500px">
 <br>
 
 **Visualization**: A page dedicated to enhancing the interpretability of patch classification results.
-<img src="https://github.com/FernandoPC25/FPathai/blob/main/gifs/visualization" width="500px">
+<img src="https://github.com/FernandoPC25/FPathai/blob/main/gifs/visualization.gif" width="500px">
 <br>
 
 **Diagnose**: A page for classifying an entire WSI using a pre-trained model.
-<img src="https://github.com/FernandoPC25/FPathai/blob/main/gifs/diagnose" width="500px">
+<img src="https://github.com/FernandoPC25/FPathai/blob/main/gifs/diagnose.gif" width="500px">
 
 
 
