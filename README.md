@@ -10,9 +10,9 @@ and train machine learning models using Whole Slide Image (WSI) data.
 Get ready to explore the future of accessible, code-free machine learning in histopathological image analysis.
 
 This library comprises five distinct pages, each serving a specific purpose:
-<br>
 
 **Homepage**: An introductory page providing an overview of FPathai.
+<br>
 <img src="https://github.com/FernandoPC25/FPathai/blob/main/gifs/homepage.gif" width="500px">
 <br>
 
