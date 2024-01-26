@@ -9,6 +9,24 @@ including researchers, medical professionals, and enthusiasts, to effortlessly c
 and train machine learning models using Whole Slide Image (WSI) data. 
 Get ready to explore the future of accessible, code-free machine learning in histopathological image analysis.
 
+This library comprises five distinct pages, each serving a specific purpose:
+
+**Homepage**: An introductory page providing an overview of FPathai.
+![Homepage](https://github.com/FernandoPC25/FPathai/blob/main/gifs/homepage.gif)
+
+**Preprocessing**: A page dedicated to generating patches for Whole Slide Images (WSI).
+![Preprocessing](https://github.com/FernandoPC25/FPathai/blob/main/gifs/preprocessing.gif)
+
+**Training Model**: A page designed for configuring and training a model using the generated patches.
+![Training Modelg](https://github.com/FernandoPC25/FPathai/blob/main/gifs/training.gif)
+
+**Visualization**: A page dedicated to enhancing the interpretability of patch classification results.
+![Visualization](https://github.com/FernandoPC25/FPathai/blob/main/gifs/visualization.gif)
+
+**Diagnose**: A page for classifying an entire WSI using a pre-trained model.
+![Diagnose](https://github.com/FernandoPC25/FPathai/blob/main/gifs/diagnose.gif)
+
+
 
 ## Clone the Repository
 
