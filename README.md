@@ -1,7 +1,7 @@
 ![Logo](images/logo.png)
 # Application for histopathological image analysis
 
-**Welcome to FPathai** (Friendly PATHology application for Artificial Intelligence), an innovative application tailored for the world of histopathological image analysis 
+**Welcome to FPathai** (**F**riendly **PATH**ology application for **A**rtificial **I**ntelligence), an innovative application tailored for the world of histopathological image analysis 
 that breaks down barriers to entry in the world of machine learning.
 Without the need for a single 
 line of code, this user-friendly tool enables individuals from diverse backgrounds, 
